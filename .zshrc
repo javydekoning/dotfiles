@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -53,8 +53,8 @@ alias fixteams='rm -r ~/Library/Application\ Support/Microsoft/Teams'
 alias chl='ssh root@192.168.1.2'
 
 # Completions.
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
+# autoload bashcompinit && bashcompinit
+# autoload -Uz compinit && compinit
 complete -C 'aws_completer' aws
 compdef kubecolor=kubectl
 
