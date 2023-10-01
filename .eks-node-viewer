@@ -1,0 +1,3 @@
+node-selector=karpenter.sh/provisioner-name=default
+resources=cpu
+extra-labels=kubernetes.io/arch,eks-node-viewer/node-age,topology.kubernetes.io/zone
