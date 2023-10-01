@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/github/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -13,11 +14,14 @@ ZSH_THEME="dracula"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 plugins=(
   git
   brew
   kubectl
   helm
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
