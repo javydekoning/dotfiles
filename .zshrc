@@ -21,6 +21,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+# Add the following line to your ~/.zshrc, before you source oh-my-zsh.sh:
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 plugins=(
