@@ -65,6 +65,19 @@ alias ytdlp='docker run --rm -v "$(pwd)":/downloads jauderho/yt-dlp:latest'
 alias fixteams='rm -r ~/Library/Application\ Support/Microsoft/Teams'
 alias chl='ssh root@192.168.1.2'
 
+gif() {
+    # Based on https://gist.github.com/SheldonWangRJT/8d3f44a35c8d1386a396b9b49b43c385
+    output_file="$1.gif"
+    ffmpeg -y -i $1 -v quiet -vf scale=iw/2:ih/2 -pix_fmt rgb8 -r 10 $output_file && gifsicle -O3 $output_file -o $output_file
+}
+
+dropcreds() {
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_DEFAULT_REGION
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_SESSION_TOKEN
+}
+
 # Completions.
 # autoload bashcompinit && bashcompinit
 # autoload -Uz compinit && compinit
