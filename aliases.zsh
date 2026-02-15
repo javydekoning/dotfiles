@@ -22,6 +22,7 @@ fi
 # Dev aliases
 alias tf='terraform'
 alias runlinter='npx mega-linter-runner --fix'
+alias cdkd='cdk deploy --require-approval never --path-metadata false'
 
 # Cross-platform aliases
 alias grep='grep --color=auto'
@@ -49,7 +50,7 @@ case "$(uname -s)" in
     ;;
   Darwin)
     alias shutdown='sudo shutdown -h now'
-    alias update='brew update && brew upgrade'
+    alias update='brew update && brew outdated && brew upgrade --greedy && brew cleanup'
     alias cleanup='brew cleanup'
     alias egrep='grep -E --color=auto'
     alias fgrep='grep -F --color=auto'

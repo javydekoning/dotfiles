@@ -24,18 +24,6 @@
         update_cache: yes
       when: ansible_facts['os_family'] == "Debian"
 
-    - name: Install required packages (RedHat/Fedora)
-      become: true
-      yum:
-        name:
-          - git
-          - zsh
-          - curl
-          - vim
-          - fzf
-        state: present
-      when: ansible_facts['os_family'] == "RedHat"
-
     - name: Install required packages (Archlinux)
       become: true
       pacman:
@@ -52,11 +40,38 @@
     - name: Install required packages (macOS)
       homebrew:
         name:
-          - git
-          - zsh
+          - aerospace
+          - awscli
           - curl
-          - vim
+          - font-hack-nerd-font
           - fzf
+          - ghostty
+          - git
+          - go
+          - helm
+          - jq
+          - k9s
+          - kubecolor
+          - kubectx
+          - kubernetes-cli
+          - kustomize
+          - nmap
+          - node
+          - obsidian
+          - raycast
+          - signal
+          - sqlite
+          - terraform
+          - uv
+          - vim
+          - yq
+          - yt-dlp
+          - zen-browser
+          - zsh
+          - zsh-autocomplete
+          - zsh-completions
+          - zsh-history-substring-search
+          - nvm
         state: present
       when: ansible_facts['os_family'] == "Darwin"
 
