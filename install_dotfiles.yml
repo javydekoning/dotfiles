@@ -78,6 +78,7 @@
           - zsh-history-substring-search
         state: present
       when: ansible_facts['os_family'] == "Darwin"
+      failed_when: false
 
     - name: Check if oh-my-zsh is installed
       stat:

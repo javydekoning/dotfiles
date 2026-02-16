@@ -63,5 +63,10 @@ fi
 # Enable fzf (Ctrl+R history search, Ctrl+T file, Alt+C cd) via dotfiles symlink
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+# Add toolbox to PATH if it exists and isn't already there
+if [[ -d "$HOME/.toolbox/bin" && ":$PATH:" != *":$HOME/.toolbox/bin:"* ]]; then
+  export PATH="$HOME/.toolbox/bin:$PATH"
+fi
+
 # OpenClaw Completion
 [[ -f "/Users/javy/.openclaw/completions/openclaw.zsh" ]] && source "/Users/javy/.openclaw/completions/openclaw.zsh"
