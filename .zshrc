@@ -60,13 +60,8 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Enable fzf (multi-path: Homebrew/manual install, Linux package manager, etc.)
-if [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
-elif [ -f /usr/share/fzf/key-bindings.zsh ]; then
-  source /usr/share/fzf/key-bindings.zsh
-  [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-fi
+# Enable fzf (Ctrl+R history search, Ctrl+T file, Alt+C cd) via dotfiles symlink
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# OpenClaw Completion
+[[ -f "/Users/javy/.openclaw/completions/openclaw.zsh" ]] && source "/Users/javy/.openclaw/completions/openclaw.zsh"

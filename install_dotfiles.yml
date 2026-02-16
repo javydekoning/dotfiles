@@ -40,11 +40,13 @@
     - name: Install required packages (macOS)
       homebrew:
         name:
-          - aerospace
+          - ansible
           - awscli
           - curl
+          - deno
           - font-hack-nerd-font
           - fzf
+          - gh
           - ghostty
           - git
           - go
@@ -55,23 +57,25 @@
           - kubectx
           - kubernetes-cli
           - kustomize
+          - nikitabobko/tap/aerospace
           - nmap
           - node
+          - nvm
           - obsidian
           - raycast
           - signal
           - sqlite
           - terraform
+          - tree
           - uv
           - vim
           - yq
           - yt-dlp
-          - zen-browser
+          - zen
           - zsh
           - zsh-autocomplete
           - zsh-completions
           - zsh-history-substring-search
-          - nvm
         state: present
       when: ansible_facts['os_family'] == "Darwin"
 
@@ -133,6 +137,7 @@
         force: yes
       loop:
         - { src: ".zshrc", dest: ".zshrc" }
+        - { src: ".fzf.zsh", dest: ".fzf.zsh" }
         - { src: ".vimrc", dest: ".vimrc" }
         - { src: ".tmux.conf", dest: ".tmux.conf" }
         - { src: ".p10k.zsh", dest: ".p10k.zsh" }
