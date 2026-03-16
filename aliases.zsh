@@ -49,6 +49,7 @@ case "$(uname -s)" in
     fi
     ;;
   Darwin)
+    ytmp3() { cd ~/Music && yt-dlp --extract-audio --audio-format mp3 "$1" && cd -; }
     alias shutdown='sudo shutdown -h now'
     alias update='brew update && brew outdated && brew upgrade --greedy && brew cleanup'
     alias cleanup='brew cleanup'
