@@ -149,6 +149,19 @@
         state: directory
         mode: "0755"
 
+    - name: Create Ghostty config directory
+      file:
+        path: "{{ home_dir }}/.config/ghostty"
+        state: directory
+        mode: "0755"
+
+    - name: Create symlink for Ghostty config
+      file:
+        src: "{{ dotfiles_dir }}/ghostty.config"
+        dest: "{{ home_dir }}/.config/ghostty/config"
+        state: link
+        force: yes
+
     - name: Create symlink for aliases
       file:
         src: "{{ dotfiles_dir }}/aliases.zsh"
