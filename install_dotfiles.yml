@@ -43,11 +43,11 @@
           - ansible
           - awscli
           - curl
+          - cmux
           - deno
           - font-hack-nerd-font
           - fzf
           - gh
-          - ghostty
           - git
           - go
           - helm
@@ -58,10 +58,13 @@
           - kubernetes-cli
           - kustomize
           - nikitabobko/tap/aerospace
+          - netnewswire
           - nmap
           - node
           - nvm
+          - obs
           - obsidian
+          - orbstack
           - raycast
           - signal
           - sqlite
