@@ -42,8 +42,8 @@
         name:
           - ansible
           - awscli
-          - curl
           - cmux
+          - curl
           - deno
           - font-hack-nerd-font
           - fzf
@@ -57,18 +57,18 @@
           - kubectx
           - kubernetes-cli
           - kustomize
-          - nikitabobko/tap/aerospace
           - netnewswire
+          - nikitabobko/tap/aerospace
           - nmap
           - node
           - nvm
           - obs
           - obsidian
+          - opentofu
           - orbstack
           - raycast
           - signal
           - sqlite
-          - terraform
           - tree
           - uv
           - vim
