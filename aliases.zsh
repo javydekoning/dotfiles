@@ -20,7 +20,7 @@ else
 fi
 
 # Dev aliases
-alias tf='terraform'
+alias tf='tofu'
 alias runlinter='npx mega-linter-runner --fix'
 alias cdkd='cdk deploy --require-approval never --path-metadata false'
 
