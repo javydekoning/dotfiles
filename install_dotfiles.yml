@@ -45,6 +45,8 @@
           - cmux
           - curl
           - deno
+          - dockdoor
+          - drawio
           - font-hack-nerd-font
           - fzf
           - gh
@@ -65,10 +67,11 @@
           - obs
           - obsidian
           - opentofu
-          - orbstack
           - raycast
+          - sebsto/macos/whispr
           - signal
           - sqlite
+          - sublime-text
           - tree
           - uv
           - vim
