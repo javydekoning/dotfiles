@@ -58,15 +58,21 @@ if [ -f "${ZSH_CUSTOM}/aliases.zsh" ]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Enable fzf (Ctrl+R history search, Ctrl+T file, Alt+C cd) via dotfiles symlink
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# OpenClaw Completion
+[[ -f "/Users/javy/.openclaw/completions/openclaw.zsh" ]] && source "/Users/javy/.openclaw/completions/openclaw.zsh"
+
 
 # Add toolbox to PATH if it exists and isn't already there
 if [[ -d "$HOME/.toolbox/bin" && ":$PATH:" != *":$HOME/.toolbox/bin:"* ]]; then
   export PATH="$HOME/.toolbox/bin:$PATH"
 fi
 
-# OpenClaw Completion
-[[ -f "/Users/javy/.openclaw/completions/openclaw.zsh" ]] && source "/Users/javy/.openclaw/completions/openclaw.zsh"
+# Add AIM CLI MCP servers to PATH if they exist and aren't already there
+if [[ -d "$HOME/.aim/mcp-servers" && ":$PATH:" != *":$HOME/.aim/mcp-servers:"* ]]; then
+  export PATH="$HOME/.aim/mcp-servers:$PATH"
+fi

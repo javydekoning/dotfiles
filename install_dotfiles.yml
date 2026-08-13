@@ -41,12 +41,17 @@
       homebrew:
         name:
           - ansible
+          - aws/tap/eks-node-viewer
           - awscli
+          - bentobox
+          - caskhub
           - cmux
           - curl
           - deno
-          - dockdoor
+          - docker
           - drawio
+          - eksctl
+          - ffmpeg
           - font-hack-nerd-font
           - fzf
           - gh
@@ -54,27 +59,22 @@
           - go
           - helm
           - jq
-          - k9s
           - kubecolor
           - kubectx
           - kubernetes-cli
           - kustomize
-          - netnewswire
-          - nikitabobko/tap/aerospace
-          - nmap
+          - neohtop
           - node
-          - nvm
-          - obs
           - obsidian
           - opentofu
+          - p7zip
           - raycast
-          - sebsto/macos/whispr
+          - session-manager-plugin
+          - shottr
           - signal
-          - sqlite
           - sublime-text
           - tree
           - uv
-          - vim
           - yq
           - yt-dlp
           - zen
@@ -84,6 +84,38 @@
           - zsh-history-substring-search
         state: present
       when: ansible_facts['os_family'] == "Darwin"
+      failed_when: false
+
+    # Override manually with: ansible-playbook ... -e work_machine=true  (or =false)
+    - name: Detect corporate-managed (work) macOS via Jamf MDM
+      stat:
+        path: /usr/local/bin/jamf
+      register: jamf_binary
+      when: ansible_facts['os_family'] == "Darwin"
+
+    - name: Determine whether this is a work machine
+      set_fact:
+        is_work_mac: "{{ work_machine | default(jamf_binary.stat.exists | default(false)) | bool }}"
+      when: ansible_facts['os_family'] == "Darwin"
+
+    - name: Install work-only packages (macOS work machine)
+      homebrew:
+        name:
+          - google-chrome
+          - kiro
+          - kiro-cli
+          - microsoft-auto-update
+          - microsoft-excel
+          - microsoft-outlook
+          - microsoft-powerpoint
+          - microsoft-teams
+          - microsoft-word
+          - slack
+          - zoom
+        state: present
+      when:
+        - ansible_facts['os_family'] == "Darwin"
+        - is_work_mac | bool
       failed_when: false
 
     - name: Check if oh-my-zsh is installed
