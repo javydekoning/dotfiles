@@ -59,13 +59,17 @@
           - go
           - helm
           - jq
+          - kirocrew
           - kubecolor
           - kubectx
           - kubernetes-cli
           - kustomize
+          - mole
+          - ncdu
           - neohtop
           - node
           - obsidian
+          - openlogi
           - opentofu
           - p7zip
           - raycast
