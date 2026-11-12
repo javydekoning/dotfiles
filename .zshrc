@@ -24,6 +24,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
+# Don't prompt for confirmation before brew install/upgrade.
+export HOMEBREW_NO_ASK=1
+
 plugins=(
   git
   kubectl
@@ -51,3 +54,6 @@ path=("$HOME/bin" $path)
 
 # Disable Kiro's native cmux integration; kiro-cmux provides its own.
 export KIRO_NO_CMUX=1
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"
