@@ -43,14 +43,12 @@
           - ansible
           - aws/tap/eks-node-viewer
           - awscli
-          - bentobox
           - caskhub
           - cmux
           - curl
           - deno
           - docker
           - drawio
-          - eksctl
           - ffmpeg
           - font-hack-nerd-font
           - fzf
@@ -81,6 +79,7 @@
           - uv
           - yq
           - yt-dlp
+          - zapfast
           - zen
           - zsh
           - zsh-autocomplete
